@@ -227,3 +227,15 @@ img,svg,video{max-width:100%}
 @media(prefers-reduced-motion:reduce){
  #expertise :is(.service-card,.platform-card,.service-icon,.platform-num){transition:none!important;animation:none!important;transform:none!important}
 }
+
+/* Scroll-driven portrait: lift from the background into the open orbit.
+   Keep the moving portrait inside the visual column, never over the copy. */
+.hero#home{--portrait-progress:0;--portrait-lift:24px;--portrait-scale:.88;--portrait-background-opacity:.76}
+.hero#home::before{opacity:var(--portrait-background-opacity)}
+.hero#home .hero-copy{z-index:3}
+.hero#home .market-orbit{z-index:2}
+.hero-portrait-reveal{position:absolute;inset:15% 16% 12%;z-index:1;display:flex;align-items:flex-end;justify-content:center;pointer-events:none;opacity:var(--portrait-progress);transform:translateY(var(--portrait-lift)) scale(var(--portrait-scale));transform-origin:center bottom;overflow:hidden;border-radius:45% 45% 18% 18%;mask-image:linear-gradient(to bottom,#000 0%,#000 86%,transparent 100%)}
+.hero-portrait-reveal img{display:block;width:100%;height:100%;object-fit:contain;object-position:center bottom}
+.market-orbit-node{z-index:2}
+@media(max-width:760px){.hero#home{--portrait-background-opacity:.60}.hero-portrait-reveal{inset:15% 16% 12%}}
+@media(prefers-reduced-motion:reduce){.hero-portrait-reveal{transform:none;opacity:1}.hero#home::before{opacity:.20}}
