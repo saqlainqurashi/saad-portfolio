@@ -213,3 +213,17 @@ img,svg,video{max-width:100%}
 .market-orbit:hover .market-orbit-node,.market-orbit:hover .market-orbit-logo{animation-play-state:paused}
 @media(max-width:760px){.market-orbit{width:min(100%,350px);--logo-width:78px;--orbit-inset:14%;margin:0 auto 8px}.market-orbit-logo{height:43px;padding:6px 8px;border-radius:10px}.market-tiktok{font-size:10px}.market-logo-fallback{font-size:11px}}
 @media(prefers-reduced-motion:reduce){.market-orbit-node,.market-orbit-logo{animation:none}}
+
+/* Subtle interactive feedback for expertise and marketplace cards */
+#expertise :is(.service-card,.platform-card){transition:transform .24s cubic-bezier(.2,.75,.25,1),box-shadow .24s ease,border-color .24s ease,background-color .24s ease}
+#expertise :is(.service-icon,.platform-num){transition:transform .24s ease,background-color .24s ease,color .24s ease}
+@media(hover:hover) and (pointer:fine){
+ #expertise :is(.service-card,.platform-card):hover{transform:translateY(-5px);border-color:#92cbd0;box-shadow:0 14px 32px rgba(16,43,67,.10);background-color:#fcffff}
+ #expertise .service-card:hover .service-icon,#expertise .platform-card:hover .platform-num{transform:scale(1.08);background-color:#087d86;color:#fff}
+}
+#expertise :is(.service-card,.platform-card):active{transform:scale(.98);border-color:#78b9bf}
+#expertise :is(.service-card,.platform-card).expertise-tapped{animation:expertise-tap-feedback .38s ease-out}
+@keyframes expertise-tap-feedback{0%{box-shadow:0 0 0 0 #087d8633}55%{box-shadow:0 0 0 4px #087d861c}100%{box-shadow:0 0 0 7px #087d8600}}
+@media(prefers-reduced-motion:reduce){
+ #expertise :is(.service-card,.platform-card,.service-icon,.platform-num){transition:none!important;animation:none!important;transform:none!important}
+}

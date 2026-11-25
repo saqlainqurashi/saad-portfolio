@@ -7,3 +7,6 @@ document.getElementById('year').textContent=new Date().getFullYear();
 
 // Keep platform names visible even when external logo assets cannot load.
 document.querySelectorAll('.market-orbit-logo img').forEach(img=>{const fallback=()=>img.parentElement.classList.add('logo-failed');img.addEventListener('error',fallback);if(img.complete&&!img.naturalWidth)fallback();});
+
+// Brief visual feedback on click or tap; cards remain informational.
+document.querySelectorAll('#expertise .service-card, #expertise .platform-card').forEach(card=>{card.addEventListener('click',()=>{card.classList.remove('expertise-tapped');void card.offsetWidth;card.classList.add('expertise-tapped');});card.addEventListener('animationend',event=>{if(event.animationName==='expertise-tap-feedback')card.classList.remove('expertise-tapped');});});
