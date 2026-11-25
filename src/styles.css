@@ -172,3 +172,8 @@ img,svg,video{max-width:100%}
 @media(max-width:760px){.commerce-visual{max-width:440px}.commerce-board{padding:16px}}
 @media(max-width:360px){.commerce-board{padding:12px}.commerce-platforms{grid-template-columns:repeat(2,minmax(0,1fr))}.commerce-header h2{font-size:18px}}
 @media(prefers-reduced-motion:reduce){.commerce-visual *{animation:none!important;transition:none!important}}
+
+/* Uploaded portrait watermark behind hero introduction */
+.hero-copy{position:relative;isolation:isolate}
+.hero-copy::before{content:"";position:absolute;inset:-22px -12px -22px 0;z-index:-1;pointer-events:none;background:url('/saad-hero-bg.webp') no-repeat right center / auto 100%;opacity:.13;mask-image:radial-gradient(ellipse at 68% 50%,#000 25%,transparent 74%);}
+@media(max-width:760px){.hero-copy::before{inset:-10px 0;background-size:auto 95%;opacity:.10}}
