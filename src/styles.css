@@ -173,19 +173,17 @@ img,svg,video{max-width:100%}
 @media(max-width:360px){.commerce-board{padding:12px}.commerce-platforms{grid-template-columns:repeat(2,minmax(0,1fr))}.commerce-header h2{font-size:18px}}
 @media(prefers-reduced-motion:reduce){.commerce-visual *{animation:none!important;transition:none!important}}
 
-/* Full-width portrait backdrop, scoped to the opening hero only */
-.hero#home{position:relative;isolation:isolate;background:#101820;overflow:hidden}
-.hero#home::before{content:"";position:absolute;inset:0;z-index:-2;pointer-events:none;background:url('/saad-hero-bg.webp') center 43% / cover no-repeat}
-.hero#home::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(90deg,rgba(8,15,23,.85) 0%,rgba(8,15,23,.69) 38%,rgba(8,15,23,.42) 65%,rgba(8,15,23,.60) 100%)}
-.hero#home .hero-grid{min-height: min(730px,calc(100svh - 75px));position:relative;z-index:1}
+/* Full-width hero with original-resolution transparent portrait */
+.hero#home{position:relative;isolation:isolate;background:radial-gradient(ellipse at 53% 30%,#294557 0%,#122c40 45%,#0b1a28 100%);overflow:hidden}
+.hero#home::before{content:"";position:absolute;inset:0;z-index:-2;pointer-events:none;background:url('/saad-portrait.png.png') 57% bottom / auto min(100%,760px) no-repeat;opacity:.76}
+.hero#home::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(90deg,rgba(8,19,31,.89) 0%,rgba(8,19,31,.67) 30%,rgba(8,19,31,.17) 57%,rgba(8,19,31,.22) 72%,rgba(8,19,31,.55) 100%)}
+.hero#home .hero-grid{min-height:min(760px,calc(100svh - 75px));position:relative;z-index:1}
 .hero#home .hero-copy{position:relative;color:#fff}
-.hero#home h1{color:#fff;text-shadow:0 2px 18px #0006}
-.hero#home h1 span{color:#fff}
+.hero#home h1,.hero#home h1 span{color:#fff;text-shadow:0 2px 8px #0b1a28}
 .hero#home .overline{color:#9ce9df}
 .hero#home .overline .dot{background:#68e2cd}
-.hero#home .hero-title{color:#eaf3f5}
-.hero#home .hero-summary{color:#e0e9ed;text-shadow:0 1px 8px #0008}
-.hero#home .hero-notes{color:#e0e9ed}
+.hero#home .hero-title{color:#f1f6f8}
+.hero#home .hero-summary,.hero#home .hero-notes{color:#e7eff4;text-shadow:0 1px 5px #0b1a28}
 .hero#home .hero-notes span::before{color:#78e3d1}
 .hero#home .hero-actions .btn-primary{background:#087d86;color:#fff;border-color:#55b9bc}
 .hero#home .hero-actions .btn-primary:hover{background:#066973}
@@ -193,4 +191,8 @@ img,svg,video{max-width:100%}
 .hero#home .hero-actions .btn-outline:hover{background:#ffffff20}
 .hero#home .commerce-visual::before{display:none}
 .hero#home .commerce-board{box-shadow:0 22px 60px #0005}
-@media(max-width:760px){.hero#home::before{background-size: auto 100%;background-position:50% top}.hero#home::after{background:linear-gradient(180deg,rgba(8,15,23,.77),rgba(8,15,23,.68) 45%,rgba(8,15,23,.66))}.hero#home .hero-grid{min-height:0}}
+@media(max-width:760px){
+.hero#home::before{background-size:min(100%,440px) auto;background-position:center 0;opacity:.60}
+.hero#home::after{background:linear-gradient(180deg,rgba(8,19,31,.49),rgba(8,19,31,.82) 40%,#0b1a28 75%)}
+.hero#home .hero-grid{min-height:0}
+}
