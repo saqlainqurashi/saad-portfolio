@@ -196,3 +196,20 @@ img,svg,video{max-width:100%}
 .hero#home::after{background:linear-gradient(180deg,rgba(8,19,31,.49),rgba(8,19,31,.82) 40%,#0b1a28 75%)}
 .hero#home .hero-grid{min-height:0}
 }
+
+/* Floating marketplace wordmarks, no analytics card */
+.market-orbit{position:relative;width:min(100%,470px);aspect-ratio:1;justify-self:center;align-self:center;isolation:isolate;margin:12px auto;--orbit-inset:12%;--logo-width:clamp(76px,9vw,112px)}
+.market-orbit-track{position:absolute;inset:var(--orbit-inset);border:1px solid #ffffff29;border-radius:50%;box-shadow:0 0 30px #71d9e80b;pointer-events:none}
+.market-orbit-node{position:absolute;inset:var(--orbit-inset);border-radius:50%;transform:rotate(var(--angle));animation:market-revolve 40s linear infinite;pointer-events:none}
+.market-orbit-logo{position:absolute;top:0;left:50%;width:var(--logo-width);height:clamp(43px,5vw,62px);padding:8px 10px;border-radius:13px;background:#fff;box-shadow:0 8px 24px #0004;display:grid;place-items:center;transform:translate(-50%,-50%) rotate(calc(-1 * var(--angle)));animation:market-upright 40s linear infinite;pointer-events:auto}
+.market-orbit-logo img{display:block;width:100%;height:100%;min-height:0;object-fit:contain}
+.market-logo-fallback{display:none;color:var(--brand);font-weight:800;font-size:13px;text-align:center}
+.market-orbit-logo.logo-failed img{display:none}
+.market-orbit-logo.logo-failed .market-logo-fallback{display:block}
+.market-tiktok{font-size:12px;font-weight:800;color:#151515;line-height:1.15;text-align:center}
+.market-tiktok span{font-size:22px;display:inline-block;color:#151515;text-shadow:-1px 1px #25f4ee,1px -1px #fe2c55}
+@keyframes market-revolve{from{transform:rotate(var(--angle))}to{transform:rotate(calc(var(--angle) + 360deg))}}
+@keyframes market-upright{from{transform:translate(-50%,-50%) rotate(calc(-1 * var(--angle)))}to{transform:translate(-50%,-50%) rotate(calc(-1 * var(--angle) - 360deg))}}
+.market-orbit:hover .market-orbit-node,.market-orbit:hover .market-orbit-logo{animation-play-state:paused}
+@media(max-width:760px){.market-orbit{width:min(100%,350px);--logo-width:78px;--orbit-inset:14%;margin:0 auto 8px}.market-orbit-logo{height:43px;padding:6px 8px;border-radius:10px}.market-tiktok{font-size:10px}.market-logo-fallback{font-size:11px}}
+@media(prefers-reduced-motion:reduce){.market-orbit-node,.market-orbit-logo{animation:none}}
