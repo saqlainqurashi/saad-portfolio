@@ -134,3 +134,41 @@ img,svg,video{max-width:100%}
   .contact-wrap{padding:23px 16px}
   .contact-wrap h2{font-size:26px}
 }
+
+
+/* Hero marketplace analytics — independent from the original portrait */
+.commerce-visual{position:relative;width:100%;max-width:490px;margin:0 auto;padding:10px 0 22px;isolation:isolate}
+.commerce-visual::before{content:"";position:absolute;inset:6px -7px 14px 18px;background:linear-gradient(145deg,#d3ecf1,#9bcfd6);border-radius:27px;transform:rotate(3deg);z-index:-1}
+.commerce-board{position:relative;background:#fff;border:1px solid #dce9ed;border-radius:23px;padding:20px;box-shadow:0 24px 60px #102b4324}
+.commerce-header,.commerce-chart-head,.commerce-platform-heading{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.commerce-eyebrow{font-size:9px;font-weight:800;letter-spacing:1.2px;color:var(--teal)}
+.commerce-header h2{font-size:21px;letter-spacing:-.7px;margin:3px 0 0;line-height:1.25;color:var(--navy)}
+.commerce-demo,.commerce-trend{flex-shrink:0;font-size:10px;font-weight:800;color:#087d86;background:#e9f6f5;padding:5px 8px;border-radius:99px}
+.commerce-kpis{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:16px 0 12px}
+.commerce-kpis>div{background:#f5fafc;border:1px solid #e0ebef;border-radius:12px;padding:12px;min-width:0}
+.commerce-kpis span,.commerce-kpis small{display:block;color:var(--muted);font-size:10px}
+.commerce-kpis strong{display:block;color:var(--navy);font:800 30px/1.2 'Manrope',sans-serif;margin:4px 0}
+.commerce-kpis em{font:700 12px 'DM Sans',sans-serif;color:var(--teal)}
+.commerce-chart{border:1px solid #e0ebef;border-radius:13px;padding:12px;background:#fcfefe}
+.commerce-chart-head span:first-child{display:block;color:var(--muted);font-size:10px}
+.commerce-chart-head strong{display:block;font-size:13px;color:var(--navy)}
+.commerce-graph{display:block;width:100%;height:auto;margin:9px 0 0;overflow:visible}
+.commerce-line{stroke-dasharray:1;stroke-dashoffset:0;animation:commerce-draw 2s ease-out both}
+.commerce-bars{transform-origin:center 128px;animation:commerce-rise 1.4s ease-out both}
+.commerce-endpoint{animation:commerce-pulse 2.8s ease-in-out infinite;transform-origin:292px 15px}
+.commerce-note{font-size:9px;color:var(--muted);margin:4px 0 0;line-height:1.5}
+.commerce-platform-heading{margin:15px 0 9px;font-size:11px;font-weight:800;color:var(--navy)}
+.commerce-platform-heading span:last-child{font-size:10px;color:var(--teal)}
+.commerce-platforms{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;padding:4px 0}
+.commerce-brand{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:4px;min-width:0;min-height:57px;text-align:center;border:1px solid #e2ebef;border-radius:10px;background:#fff;color:var(--navy);font-size:9px;font-weight:800;line-height:1.2;animation:commerce-float 4.8s ease-in-out infinite;animation-delay:var(--delay);box-shadow:0 3px 9px #102b4309}
+.commerce-mark{display:grid;place-items:center;width:23px;height:23px;border-radius:7px;background:var(--brand);color:#fff;font:bold 15px 'DM Sans',sans-serif}
+.commerce-brand:hover{animation-play-state:paused;border-color:var(--brand)}
+.commerce-availability{position:absolute;bottom:0;right:0;display:flex;align-items:center;gap:7px;background:#fff;border:1px solid #d6e8ed;box-shadow:0 8px 24px #102b4315;border-radius:10px;padding:9px 12px;font-size:10px;font-weight:800;color:var(--navy)}
+.commerce-availability span{width:7px;height:7px;border-radius:50%;background:#1caa8b;box-shadow:0 0 0 3px #def6ec}
+@keyframes commerce-draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+@keyframes commerce-rise{from{transform:scaleY(.1);opacity:.4}to{transform:scaleY(1);opacity:1}}
+@keyframes commerce-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+@keyframes commerce-pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.35)}}
+@media(max-width:760px){.commerce-visual{max-width:440px}.commerce-board{padding:16px}}
+@media(max-width:360px){.commerce-board{padding:12px}.commerce-platforms{grid-template-columns:repeat(2,minmax(0,1fr))}.commerce-header h2{font-size:18px}}
+@media(prefers-reduced-motion:reduce){.commerce-visual *{animation:none!important;transition:none!important}}
