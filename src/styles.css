@@ -250,3 +250,12 @@ img,svg,video{max-width:100%}
 #expertise .platform-brand-image img{display:block;width:122px;max-width:85%;height:40px;object-fit:contain;object-position:left center;transition:transform .24s ease;transform-origin:left center}
 @media(hover:hover) and (pointer:fine){#expertise .platform-card:hover .platform-brand-image img{transform:scale(1.05)}}
 @media(prefers-reduced-motion:reduce){#expertise .platform-brand-image img{transition:none!important;transform:none!important}}
+
+/* Accessible full-card links to official marketplaces. */
+#expertise .platform-card-link{display:flex;flex-direction:column;text-decoration:none;color:inherit;cursor:pointer}
+#expertise .platform-card-link p{flex:1}
+#expertise .platform-visit{display:flex;align-items:center;gap:6px;color:#087d86;font-size:12px;font-weight:800;margin-top:15px}
+#expertise .platform-visit span{display:inline-block;transition:transform .2s ease}
+#expertise .platform-card-link:hover .platform-visit span{transform:translate(2px,-2px)}
+#expertise .platform-card-link:focus-visible{outline:3px solid #087d86;outline-offset:4px}
+@media(prefers-reduced-motion:reduce){#expertise .platform-visit span{transition:none;transform:none!important}}
