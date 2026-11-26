@@ -33,3 +33,6 @@ document.querySelectorAll('#expertise .service-card, #expertise .platform-card')
  const request=()=>{if(!pending){pending=true;requestAnimationFrame(paint);}};
  window.addEventListener('scroll',request,{passive:true});window.addEventListener('resize',request,{passive:true});reduce.addEventListener?.('change',request);paint();
 })();
+
+// Retry unavailable marketplace artwork with a real site icon, then hide broken images.
+document.querySelectorAll('.platform-brand-image img').forEach(img=>{const recover=()=>{if(img.dataset.backup&&!img.dataset.retried){img.dataset.retried='1';img.src=img.dataset.backup;}else{img.parentElement.hidden=true;img.parentElement.style.display='none';}};img.addEventListener('error',recover);if(img.complete&&!img.naturalWidth)recover();});
