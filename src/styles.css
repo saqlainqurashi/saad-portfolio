@@ -275,3 +275,9 @@ button.work-slide-picture{width:100%;border:0;padding:0;cursor:zoom-in}button.wo
 #portfolio .work-slide-picture:not(.work-crop) img{position:static;display:block;width:100%;height:100%;max-width:100%;max-height:100%;object-fit:contain;object-position:center;transform:none}
 #portfolio .work-slide-picture.work-crop img{position:absolute;top:0;left:50%;width:auto;height:100%;max-width:none;max-height:100%;object-fit:contain;clip-path:inset(0 0 0 25%);transform:translateX(-37.5%)}
 #portfolio .work-slide-caption{min-height:44px}
+
+/* Equal preview frames on every practical work card, including placeholders. */
+#portfolio .case-art{width:100%;height:auto;aspect-ratio:16/9;min-height:0}
+#portfolio .work-slide{padding:10px 10px 0}
+#portfolio .work-slider-controls{padding:9px 0}
+#portfolio .case-art .artifact-preview{max-height:75%;height:150px}
