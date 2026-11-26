@@ -259,3 +259,6 @@ img,svg,video{max-width:100%}
 #expertise .platform-card-link:hover .platform-visit span{transform:translate(2px,-2px)}
 #expertise .platform-card-link:focus-visible{outline:3px solid #087d86;outline-offset:4px}
 @media(prefers-reduced-motion:reduce){#expertise .platform-visit span{transition:none;transform:none!important}}
+
+/* Anonymized real work screenshot, full image visible without stretching. */
+.case-screenshot{display:flex;padding:10px 10px 36px;background:#eef4f7;cursor:zoom-in;text-decoration:none}.case-screenshot .case-img{position:static;object-fit:contain;width:100%;height:100%;background:white;border-radius:6px;transition:transform .24s ease}.case-screenshot .sample-label{left:10px;bottom:7px}.case-screenshot:hover .case-img{transform:scale(1.025)}.case-screenshot:focus-visible{outline:3px solid #087d86;outline-offset:-3px}@media(prefers-reduced-motion:reduce){.case-screenshot .case-img{transition:none;transform:none!important}}
