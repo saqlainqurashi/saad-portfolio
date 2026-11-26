@@ -305,3 +305,5 @@ section#portfolio.content-section,section#expertise.content-section{padding:48px
 #expertise .platform-card-top{margin-bottom:8px}
 #expertise .platform-card p{line-height:1.6}
 @media(max-width:600px){section#portfolio.content-section,section#expertise.content-section{padding:34px 0}#portfolio .case-body,#expertise .platform-card{padding:14px}}
+
+#home.motion-paused .market-orbit-node,#home.motion-paused .market-orbit-logo{animation-play-state:paused!important}
