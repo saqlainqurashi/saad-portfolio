@@ -290,3 +290,18 @@ button.work-slide-picture{width:100%;border:0;padding:0;cursor:zoom-in}button.wo
 .card-emerge-visible{animation:card-emerge .55s cubic-bezier(.2,.75,.25,1) both;animation-delay:var(--emerge-delay,0ms)}
 @keyframes card-emerge{from{opacity:0;translate:0 20px}to{opacity:1;translate:0 0}}
 @media(prefers-reduced-motion:reduce){.card-emerge-pending,.card-emerge-visible{opacity:1;translate:none;animation:none}}
+
+/* Compact expertise sections while retaining readable cards and responsive grids. */
+section#portfolio.content-section,section#expertise.content-section{padding:48px 0}
+#portfolio .section-top{margin-bottom:22px}
+#portfolio .section-top h2,#expertise .marketplace-heading h3{font-size:clamp(24px,3vw,32px);line-height:1.22;letter-spacing:-.8px}
+#expertise .marketplace-deep-dive{margin-top:0;padding-top:0;border-top:0}
+#expertise .marketplace-heading{margin-bottom:18px}
+#portfolio .gallery{gap:14px}
+#portfolio .case-body{padding:16px}
+#portfolio .case-body h3{font-size:16px;margin:6px 0}
+#portfolio .case-body p{line-height:1.6;min-height:0;margin:0}
+#expertise .platform-card{padding:15px}
+#expertise .platform-card-top{margin-bottom:8px}
+#expertise .platform-card p{line-height:1.6}
+@media(max-width:600px){section#portfolio.content-section,section#expertise.content-section{padding:34px 0}#portfolio .case-body,#expertise .platform-card{padding:14px}}
